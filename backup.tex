@@ -4,7 +4,7 @@
 %% Copyright 2012 by Raymond E. Marcil
 %% Created Sun Nov 18 18:53:42 AKST 2012
 %% 
-%% Date-stamped Backups Implemented with Hardlinks and Rsync
+%% Date-stamped Backups Implemented with Hard Links and Rsync
 %%
 
   %%
@@ -51,10 +51,10 @@ hyperindex=false,
 urlcolor=blue,
 pdfborder={0 0 0},
 pdfauthor={Raymond E. Marcil},
-pdftitle={Date-stamped Backups using Hardlinks and Rsync},
+pdftitle={Date-stamped Backups using Hard Links and Rsync},
 pdfcreator={ps2pdf},
-pdfsubject={Date-stamped Backups using Hardlinks and Rsync},
-pdfkeywords={backups, datestamped, hardlinks, rsync}
+pdfsubject={Date-stamped Backups using Hard Links and Rsync},
+pdfkeywords={backups, date-stamped, hard links, rsync}
 ]{hyperref}
 
 %%
@@ -125,7 +125,7 @@ pdfkeywords={backups, datestamped, hardlinks, rsync}
 
 \title{Date-stamped Backups\\
        Implemented with\\
-       Hardlinks and Rsync}
+       Hard Links and Rsync}
 
 \author{Raymond E. Marcil\\
         \texttt{marcilr@gmail.com}
@@ -141,7 +141,7 @@ pdfkeywords={backups, datestamped, hardlinks, rsync}
 \maketitle
 
 \begin{abstract}
-  This document contains the design of a script to generated date-stamped backups using hardlinks
+  This document contains the design of a script to generated date-stamped backups using hard links
   and rsync.  The script will generate backups for every day for the
   past week, every month for the past year, and every prior year.
 
@@ -195,11 +195,11 @@ The goal is to create a script that will generate backups for every day for the 
 week, every month for the past year, and every prior year.
 
 
-%% =================== Hardlinks and Rsync ====================
-%% =================== Hardlinks and Rsync ====================
+%% =================== Hard Links and Rsync ====================
+%% =================== Hard Links and Rsync ====================
 \newpage
 \section{Hard Links and Rsync}
-The backup script can use hard links and rsync for easy backups and deduplication of data.
+The backup script uses hard links and rsync for easy backups and deduplication of data.
 
 %%
 %% Hard Links
@@ -213,7 +213,7 @@ Inodes are only deleted when all hard links to the inode are deleted.\footnote{\
 \\
 \noindent ``The standard GNU coreutils \cmd{cp} command comes with a \cmd{-l} flag that causes it to
 create (hard) links instead of copies (it doesn't hard-link directories, though, which is good; you
-might want to think about why that is).  Another handy switch for the cp command is \cmd{-a}
+might want to think about why that is).  Another handy switch for the \cmd{cp} command is \cmd{-a}
 (archive), which causes it to recurse through directories and preserve file owners, timestamps, and
 access permissions.\\
 \\
