@@ -201,19 +201,27 @@ week, every month for the past year, and every prior year.
 \section{Hard Links and Rsync}
 The backup script can use hard links and rsync for easy backups and deduplication of data.
 
+%%
+%% Hard Links
+%%
 \subsection{Hard Links}
-``The standard GNU coreutils \cmd{cp} command comes with a \cmd{-l} flag that causes it to create
-(hard) links instead of copies (it doesn't hard-link directories, though, which is good; you might
-want to think about why that is).  Another handy switch for the cp command is \cmd{-a} (archive),
-which causes it to recurse through directories and preserve file owners, timestamps, and access
-permissions.\\
+With ``hard links it is possible to associate multiple directory entries with a single
+inode.''\footnote{\href{http://www.cyberciti.biz/tips/understanding-unixlinux-symbolic-soft-and-hard-links.html}{Understanding UNIX / Linux symbolic (soft) and hard links}}
+This facilitates easy deduplication for date-stamped backups created using hard links.\\
+Inodes are only deleted when all hard links to the inode are deleted.\footnote{\href{http://linuxcommando.blogspot.com/2008/09/how-to-find-and-delete-all-hard-links.html}{How to find and delete all hard links to a file}} 
 \\
-\noindent Together, the combination cp -al makes what appears to be a full copy of a directory tree, but is
-really just an illusion that takes almost no space.  If we restrict operations on the copy to
-adding or removing (unlinking) files--i.e., never changing one in place--then the illusion of a
-full copy is complete.  To the end-user, the only differences are that the illusion-copy takes
+\\
+\noindent ``The standard GNU coreutils \cmd{cp} command comes with a \cmd{-l} flag that causes it to
+create (hard) links instead of copies (it doesn't hard-link directories, though, which is good; you
+might want to think about why that is).  Another handy switch for the cp command is \cmd{-a}
+(archive), which causes it to recurse through directories and preserve file owners, timestamps, and
+access permissions.\\
+\\
+\noindent Together, the combination \cmd{cp -al} makes what appears to be a full copy of a directory
+tree, but is really just an illusion that takes almost no space.  If we restrict operations on the
+copy to adding or removing (unlinking) files--i.e., never changing one in place--then the illusion of
+a full copy is complete.  To the end-user, the only differences are that the illusion-copy takes
 almost no disk space and almost no time to generate.''\footnote{\href{http://www.mikerubel.org/computers/rsync_snapshots/}{Easy Automated Snapshot-Style Backups with Linux and Rsync} by Mike Rubel}
-
 
 %% Create hard link using cp -al figure.
 \begin{figure}
@@ -229,6 +237,13 @@ almost no disk space and almost no time to generate.''\footnote{\href{http://www
 \label{fig:create_hard_link}
 \end{center}
 \end{figure}
+
+%%
+%% Rsync
+%%
+\subsection{Rsync}
+Rsync is a fast, versatile, remote (and local) file-copying tool.  It can be used to easily create 
+a date-stamped backup from the original files.
 
 
 
