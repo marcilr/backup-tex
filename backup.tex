@@ -194,6 +194,7 @@ pdfkeywords={backups, datestamped, hardlinks, rsync}
 The goal is to create a script that will generate backups for every day for the past
 week, every month for the past year, and every prior year.
 
+
 %% =================== Hardlinks and Rsync ====================
 %% =================== Hardlinks and Rsync ====================
 \newpage
@@ -211,6 +212,23 @@ really just an illusion that takes almost no space.  If we restrict operations o
 adding or removing (unlinking) files--i.e., never changing one in place--then the illusion of a
 full copy is complete.  To the end-user, the only differences are that the illusion-copy takes
 almost no disk space and almost no time to generate.''\footnote{\href{http://www.mikerubel.org/computers/rsync_snapshots/}{Easy Automated Snapshot-Style Backups with Linux and Rsync} by Mike Rubel}
+
+
+%% Create hardlink using cp -al figure.
+\begin{figure}
+\begin{center}
+\framebox{
+\begin{minipage}[t]{0.10\textwidth}
+\begin{center}
+\cmd{cp -al}
+\end{center}
+\end{minipage}
+}
+\caption{Create Hardlink}
+\label{fig:create_hardlink}
+\end{center}
+\end{figure}
+
 
 
 %% ======================== Examples =============================
