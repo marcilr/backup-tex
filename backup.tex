@@ -198,14 +198,15 @@ week, every month for the past year, and every prior year.
 %% =================== Hardlinks and Rsync ====================
 %% =================== Hardlinks and Rsync ====================
 \newpage
-\section{Hardlinks and Rsync}
-The backup script can use hardlinks and rsync for easy backups and deduplication of data.
+\section{Hard Links and Rsync}
+The backup script can use hard links and rsync for easy backups and deduplication of data.
 
-\subsection{Hardlinks}
-''The standard GNU coreutils cp command comes with a -l flag that causes it to create (hard) links
-instead of copies (it doesn't hard-link directories, though, which is good; you might want to
-think about why that is).  Another handy switch for the cp command is -a (archive), which causes
-it to recurse through directories and preserve file owners, timestamps, and access permissions.\\
+\subsection{Hard Links}
+``The standard GNU coreutils \cmd{cp} command comes with a \cmd{-l} flag that causes it to create
+(hard) links instead of copies (it doesn't hard-link directories, though, which is good; you might
+want to think about why that is).  Another handy switch for the cp command is \cmd{-a} (archive),
+which causes it to recurse through directories and preserve file owners, timestamps, and access
+permissions.\\
 \\
 \noindent Together, the combination cp -al makes what appears to be a full copy of a directory tree, but is
 really just an illusion that takes almost no space.  If we restrict operations on the copy to
@@ -214,7 +215,7 @@ full copy is complete.  To the end-user, the only differences are that the illus
 almost no disk space and almost no time to generate.''\footnote{\href{http://www.mikerubel.org/computers/rsync_snapshots/}{Easy Automated Snapshot-Style Backups with Linux and Rsync} by Mike Rubel}
 
 
-%% Create hardlink using cp -al figure.
+%% Create hard link using cp -al figure.
 \begin{figure}
 \begin{center}
 \framebox{
@@ -224,8 +225,8 @@ almost no disk space and almost no time to generate.''\footnote{\href{http://www
 \end{center}
 \end{minipage}
 }
-\caption{Create Hardlink}
-\label{fig:create_hardlink}
+\caption{Create Hard Link}
+\label{fig:create_hard_link}
 \end{center}
 \end{figure}
 
