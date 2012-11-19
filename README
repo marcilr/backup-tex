@@ -3,7 +3,16 @@ Created Sun Nov 18 18:31:27 AKST 2012
 Copyright (C) 2012 by Raymond E. Marcil <marcilr@gmail.com>
 
 
-Backup script for datestamped backups.
+Backup script for datestamped backups documentation.
+
+
+Sun Nov 18 18:48:29 AKST 2012
+=====================================
+Set subversion property such that that svninfo keywords get expanded in backup.tex file:
+
+$ svn propset svn:keywords "Id" backup.tex
+svn propset svn:keywords "Id" backup.tex
+$
 
 
 Filelist
