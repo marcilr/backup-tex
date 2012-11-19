@@ -1,0 +1,14 @@
+README
+Created Sun Nov 18 18:31:27 AKST 2012
+Copyright (C) 2012 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+Filelist
+========
+backup.tex
+  Backup script for datestamped backups.
+  00LATEX/template/example.tex
+
+Makefile
+  Makefile to build LaTeX backup.tex
+  00LATEX/template/Makefile
