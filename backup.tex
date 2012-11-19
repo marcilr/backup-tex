@@ -31,10 +31,15 @@
 
 %% Hyperref package for embedding URLs for clickable links in PDFs, 
 %% also specify PDF attributes here.
+%%
+%% The pdfborder={0 0 0} is what ellimated the blue box around the url displayed by \href{}{}.
+%% The command pdfborder={0 0 1} would display a box with thickness of 1 pt.
+%%
 \usepackage[
 colorlinks=false,
 hyperindex=false,
 urlcolor=blue,
+pdfborder={0 0 0},
 pdfauthor={Raymond E. Marcil},
 pdftitle={Datestamped Backups using Hardlinks and Rsync},
 pdfcreator={ps2pdf},
