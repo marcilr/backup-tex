@@ -1,11 +1,10 @@
 %% -*- Mode: LaTeX -*-
 %%
-%% bsdinspect-database.tex
-%% Copyright 2007, Applied Microsystems, Inc.  All Rights Reserved
-%% Created Wed Jul 25 09:32:40 AKDT 2007
-%% by Raymond E. Marcil 
+%% backup.tex
+%% Copyright 2012 by Raymond E. Marcil
+%% Created Sun Nov 18 18:53:42 AKST 2012
 %% 
-%% bsdinspect Database
+%% Backup Script Using Hardlinks and Rsync
 %%
 
   %%
@@ -38,7 +37,7 @@ colorlinks=false,
 hyperindex=false,
 urlcolor=blue,
 pdfauthor={Raymond E. Marcil},
-pdftitle={bsdinspect database tables},
+pdftitle={Backup Script Using Hardlinks and Rsync},
 pdfcreator={ps2pdf},
 pdfsubject={bsdinspect database},
 pdfkeywords={bsdinspect, database, tables, structure}
@@ -53,7 +52,7 @@ pdfkeywords={bsdinspect, database, tables, structure}
 %% o name of the user who has done the action
 %%
 \usepackage{svninfo}
-\svnInfo $Id: backup.tex 8 2012-11-11 21:41:52Z marcilr $
+\svnInfo $Id$
 
 
   %%
@@ -110,13 +109,14 @@ pdfkeywords={bsdinspect, database, tables, structure}
 %%%%%% Document.
   %%
 
-\title{\LaTeX\ Examples}
+\title{Backup Script\\
+       Using Hardlinks and Rsync}
 
 \author{Raymond E. Marcil\\
         \texttt{marcilr@gmail.com}
 }
 
-% Set date to RCS revision date
+% Display subversion revision and date.
 \date{Revision \svnInfoRevision
       \hspace{2pt}
       (\svnInfoLongDate)}
@@ -126,7 +126,8 @@ pdfkeywords={bsdinspect, database, tables, structure}
 \maketitle
 
 \begin{abstract}
-     This document contains \LaTeX\ examples.
+  This document contains the design of a script to generated datestamped backups using hardlinks
+  and rsync.
 
 \end{abstract}
 
