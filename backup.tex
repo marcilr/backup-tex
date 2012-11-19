@@ -15,7 +15,7 @@
 %% Specify DVIPS driver used by things like hyperref
 \documentclass[12pt,letterpaper,dvips]{article}
 
-\usepackage{rcs}
+\usepackage{svninfo}
 \usepackage{fullpage}
 \usepackage{fancyvrb} 
 \usepackage{graphicx}
@@ -44,10 +44,17 @@ pdfsubject={bsdinspect database},
 pdfkeywords={bsdinspect, database, tables, structure}
 ]{hyperref}
 
-%% Extract RCS metadata for use elsewhere.
-%% Jason figured this out, very cool.
-\RCS $Revision: 1.53 $
-\RCS $Date: 2006/06/26 21:04:55 $
+%%
+%% Extract SVN metadata for use elsewhere.
+%% This information has:
+%% o the filename
+%% o the revision number
+%% o the date and time of the last Subversion co command
+%% o name of the user who has done the action
+%%
+\usepackage{svninfo}
+\svnInfo $Id: backup.tex 8 2012-11-11 21:41:52Z marcilr $
+
 
   %%
 %%%%%% Customization.
@@ -110,9 +117,9 @@ pdfkeywords={bsdinspect, database, tables, structure}
 }
 
 % Set date to RCS revision date
-\date{Revision \RCSRevision
+\date{Revision \svnInfoRevision
       \hspace{2pt}
-      (\RCSDate)}
+      (\svnInfoLongDate)}
 
 \begin{document}
 
