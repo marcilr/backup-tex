@@ -21,6 +21,9 @@ backup.tex
   Backup script for datestamped backups.
   00LATEX/template/example.tex
 
+docs/
+  Documentation
+
 Makefile
   Makefile to build LaTeX backup.tex
   00LATEX/template/Makefile
